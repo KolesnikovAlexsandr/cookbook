@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D94E17871D3E809C0046BC2A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D94E17861D3E809C0046BC2A /* main.cpp */; };
-		D94E17901D3E821B0046BC2A /* function.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D94E178E1D3E821B0046BC2A /* function.cpp */; };
+		D959C4C01D441A2B009F70DE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D959C4BF1D441A2B009F70DE /* main.cpp */; };
+		D959C4C31D441A3B009F70DE /* function.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D959C4C21D441A3B009F70DE /* function.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,9 +25,10 @@
 
 /* Begin PBXFileReference section */
 		D94E17831D3E809C0046BC2A /* Sort_main */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sort_main; sourceTree = BUILT_PRODUCTS_DIR; };
-		D94E17861D3E809C0046BC2A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		D94E178E1D3E821B0046BC2A /* function.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = function.cpp; sourceTree = "<group>"; };
-		D94E178F1D3E821B0046BC2A /* function.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = function.hpp; sourceTree = "<group>"; };
+		D959C4BF1D441A2B009F70DE /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = Sort/main.cpp; sourceTree = SOURCE_ROOT; };
+		D959C4C11D441A33009F70DE /* function.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = function.hpp; path = Sort/function.hpp; sourceTree = SOURCE_ROOT; };
+		D959C4C21D441A3B009F70DE /* function.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = function.cpp; path = Sort/function.cpp; sourceTree = SOURCE_ROOT; };
+		D959C4C41D441A42009F70DE /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header.h; path = Sort/Header.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +61,10 @@
 		D94E17851D3E809C0046BC2A /* Sort_main */ = {
 			isa = PBXGroup;
 			children = (
-				D94E17861D3E809C0046BC2A /* main.cpp */,
-				D94E178E1D3E821B0046BC2A /* function.cpp */,
-				D94E178F1D3E821B0046BC2A /* function.hpp */,
+				D959C4C11D441A33009F70DE /* function.hpp */,
+				D959C4C21D441A3B009F70DE /* function.cpp */,
+				D959C4C41D441A42009F70DE /* Header.h */,
+				D959C4BF1D441A2B009F70DE /* main.cpp */,
 			);
 			path = Sort_main;
 			sourceTree = "<group>";
@@ -123,8 +125,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D94E17871D3E809C0046BC2A /* main.cpp in Sources */,
-				D94E17901D3E821B0046BC2A /* function.cpp in Sources */,
+				D959C4C01D441A2B009F70DE /* main.cpp in Sources */,
+				D959C4C31D441A3B009F70DE /* function.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +247,7 @@
 				D94E178C1D3E809C0046BC2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
