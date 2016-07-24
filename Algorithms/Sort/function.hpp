@@ -158,7 +158,8 @@ void ChoiseSort(Type *mass , int lenthOfmass)
     }
 }
 
-/*void MergeSort(int *mass , int lenthOfmass)
+template <typename Type>
+void MergeSort(Type *mass , int lenthOfmass)
  {
  
  if(lenthOfmass == 1)
@@ -167,22 +168,26 @@ void ChoiseSort(Type *mass , int lenthOfmass)
  }
  int leftSize = lenthOfmass/2;
  int rightSize = lenthOfmass - leftSize;
- int *leftMass = new int[leftSize];
- int *rightMass = new int[rightSize];
+ Type *leftMass = new Type[leftSize];
+ Type *rightMass = new Type[rightSize];
+     
  copyMass(mass, leftMass, leftSize, 0, leftSize);
  copyMass(mass, rightMass, rightSize, rightSize, lenthOfmass);
- MergeSort(leftMass, leftSize);
- MergeSort(rightMass, rightSize);
- Merge(mass, leftMass, rightMass, leftSize, rightSize);
+     
+ MergeSort<Type>(leftMass, leftSize);
+ MergeSort<Type>(rightMass, rightSize);
+     
+ Merge<Type>(mass, leftMass, rightMass, leftSize, rightSize);
  }
  
- 
- void Merge(int *items, int *left, int *right , int leftLength ,int rightLength )
+ template <typename Type>
+ void Merge(Type *items, Type *left, Type *right , int leftLength ,int rightLength )
  {
  int leftIndex = 0;
  int rightIndex = 0;
  int targetIndex = 0;
  int remaining = leftLength + rightLength;
+     
  while(remaining != 0)
  {
  if (leftIndex == leftLength)
@@ -204,6 +209,6 @@ void ChoiseSort(Type *mass , int lenthOfmass)
  targetIndex++;
  remaining--;
  }
- }*/
+ }
 
 #endif /* function_hpp */

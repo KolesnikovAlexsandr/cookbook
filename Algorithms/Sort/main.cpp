@@ -14,8 +14,8 @@ int main(int argc, const char * argv[]) {
     int *mass = new int[lenthOfmass];
     
     scanMass<int>(mass, lenthOfmass);
-    BoubleSort<int>(mass, lenthOfmass);
-    //MergeSort(mass , lenthOfmass);
+    //BoubleSort<int>(mass, lenthOfmass);
+    MergeSort<int>(mass , lenthOfmass);
     printMass<int>(mass, lenthOfmass);
     
     return 0;
