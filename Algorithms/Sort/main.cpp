@@ -6,19 +6,17 @@
 //  Copyright © 2016 Sasha. All rights reserved.
 //
 
-#include <iostream>
 #include "Header.h"
-#include "function.hpp"
 
 int main(int argc, const char * argv[]) {
     
     int lenthOfmass = 5;
     int *mass = new int[lenthOfmass];
     
-    scanMass(mass, lenthOfmass);
-
-    MergeSort(mass , lenthOfmass);
-    printMass(mass, lenthOfmass);
+    scanMass<int>(mass, lenthOfmass);
+    BoubleSort<int>(mass, lenthOfmass);
+    //MergeSort(mass , lenthOfmass);
+    printMass<int>(mass, lenthOfmass);
     
     return 0;
 }

@@ -9,9 +9,7 @@
 #ifndef Header_h
 #define Header_h
 
-
-void swap(int *mass , int first , int second);
-void printMass(int *mass , int massLenth);
-
+#include <iostream>
+#include "function.hpp"
 
 #endif /* Header_h */

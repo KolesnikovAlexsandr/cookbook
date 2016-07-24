@@ -9,15 +9,16 @@
 #include "function.hpp"
 #include <iostream>
 
-void swap ( int *Mass , int firstIndex , int  secondIndex )
+/*template <typename Type>
+void swap ( Type *Mass , int firstIndex , int  secondIndex )
 {
-    int buffer = Mass[ secondIndex ];
+    Type buffer = Mass[ secondIndex ];
     Mass[ secondIndex ] = Mass[ firstIndex ];
     Mass[ firstIndex ] = buffer ;
-}
+}*/
 
-
-void printMass ( int *Mass , int MassLenth )
+template <typename Type>
+void printMass ( Type *Mass , int MassLenth )
 {
     for(int numberOfelemnts = 0 ; numberOfelemnts < MassLenth ; numberOfelemnts++)
     {
@@ -25,7 +26,8 @@ void printMass ( int *Mass , int MassLenth )
     }
 }
 
-void scanMass ( int *Mass , int MassLenth )
+template <typename Type>
+void scanMass ( Type *Mass , int MassLenth )
 {
     for( int numberOfelemnts = 0 ; numberOfelemnts < MassLenth ; numberOfelemnts++)
     {
@@ -33,7 +35,8 @@ void scanMass ( int *Mass , int MassLenth )
     }
 }
 
-void copyMass ( int *MassCopyto , int *MassCopyFrom , int lenthOfMass )
+template <typename Type>
+void copyMass ( Type *MassCopyto , Type *MassCopyFrom , int lenthOfMass )
 {
     for( int  numberOfelements = 0 ; numberOfelements < lenthOfMass ; numberOfelements++ )
     {
@@ -41,7 +44,8 @@ void copyMass ( int *MassCopyto , int *MassCopyFrom , int lenthOfMass )
     }
 }
 
-void copyMass( int *MassCopyto , int *MassCopyFrom , int lenthOfmass , int FromIndex , int ToIndex )
+template <typename Type>
+void copyMass( Type *MassCopyto , Type *MassCopyFrom , int lenthOfmass , int FromIndex , int ToIndex )
 {
     for( int  numberOfelements = FromIndex ; numberOfelements < ToIndex ; numberOfelements++ )
     {
@@ -49,8 +53,8 @@ void copyMass( int *MassCopyto , int *MassCopyFrom , int lenthOfmass , int FromI
     }
 }
 
-
-int FindInsertIndex( int *Mass , int MassLenthSort , int valueToInsert )
+template <typename Type>
+int FindInsertIndex( Type *Mass , int MassLenthSort , Type valueToInsert )
 {
     int InsertIndex = 0;
     
@@ -65,9 +69,10 @@ int FindInsertIndex( int *Mass , int MassLenthSort , int valueToInsert )
     return InsertIndex;
 }
 
-void Insert(int *Mass , int MassLenth ,int InsertFrom , int InserTo , int *bufferMass )
+template <typename Type>
+void Insert(Type *Mass , int MassLenth ,int InsertFrom , int InserTo , Type *bufferMass )
 {
-    int buffer = Mass[ InsertFrom ];
+    Type buffer = Mass[ InsertFrom ];
     int correctMainMass = 0 ;
     int correctBufferMass = 0;
     
@@ -87,11 +92,11 @@ void Insert(int *Mass , int MassLenth ,int InsertFrom , int InserTo , int *buffe
     Mass[ InserTo ] = buffer;
 }
 
-
+template <typename Type>
 int FindIndexOfSmallestFromIndex( int *mass , int lenthOfmass , int startIndex )
 {
     int min_index  = startIndex;
-    int byffer = mass[ min_index ];
+    Type byffer = mass[ min_index ];
     
     for( int numberOfelements = startIndex ; numberOfelements < lenthOfmass ; numberOfelements++ )
     {
@@ -107,28 +112,12 @@ int FindIndexOfSmallestFromIndex( int *mass , int lenthOfmass , int startIndex )
 
 
 
-void BoubleSort( int *Mass , int lenthOfMass)
-{
-    bool swaped = false;
-    
-    while( !swaped )
-    {
-        swaped = true;
-        for( int numberOfelemnts = 1 ; numberOfelemnts < lenthOfMass ; numberOfelemnts++ )
-        {
-            if( Mass[ numberOfelemnts - 1 ] > Mass[ numberOfelemnts ] )
-            {
-                swap( Mass , numberOfelemnts-1 , numberOfelemnts );
-                swaped = false;
-            }
-        }
-    }
-}
 
-void InsertSort( int *Mass , int lenthOfMass )
+template <typename Type>
+void InsertSort( Type *Mass , int lenthOfMass )
 {
     int insertIndex = 0;
-    int *bufferMass = new int[ lenthOfMass ];
+    Type *bufferMass = new int[ lenthOfMass ];
     for( int numberOfelements = 0 ; numberOfelements < lenthOfMass ; numberOfelements++ )
     {
         insertIndex = FindInsertIndex( Mass , numberOfelements , Mass[ numberOfelements ] );
@@ -140,7 +129,8 @@ void InsertSort( int *Mass , int lenthOfMass )
     
 }
 
-void ChoiseSort(int *mass , int lenthOfmass)
+template <typename Type>
+void ChoiseSort(Type *mass , int lenthOfmass)
 {
     for(int numberOfelemnts = 0 ; numberOfelemnts < lenthOfmass ; numberOfelemnts++)
     {
@@ -148,7 +138,7 @@ void ChoiseSort(int *mass , int lenthOfmass)
     }
 }
 
-void MergeSort(int *mass , int lenthOfmass)
+/*void MergeSort(int *mass , int lenthOfmass)
 {
     
     if(lenthOfmass == 1)
@@ -194,6 +184,6 @@ void Merge(int *items, int *left, int *right , int leftLength ,int rightLength )
     targetIndex++;
     remaining--;
     }
-}
+}*/
 
 
