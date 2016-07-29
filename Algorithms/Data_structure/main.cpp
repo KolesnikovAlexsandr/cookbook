@@ -1,4 +1,4 @@
-s//
+//
 //  main.cpp
 //  Data_structure
 //
@@ -10,6 +10,6 @@ s//
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;ss
+    std::cout << 150%50;
+    return 0;
 }

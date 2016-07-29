@@ -13,42 +13,91 @@ template <typename T>
 class stack {
     
     int size = 0;
-    T* storage = new T[ 0 ];
+    T* storage = new T[ 50 ];
     
 public:
     void push( T data )
     {
         this.size++;
-        T* tmp_data = this.storage ;
-        this.storage = new T[ size ] ;
-        
-        for( int numberOfelements = 0 ; numberOfelements < size - 1 ; numberOfelements++ )
+
+        if( size%50 == 0 )
         {
-            this.storage[ numberOfelements ] = tmp_data[ numberOfelements ];
+            
+            T* tmp_data = this.storage ;
+            this.storage = new T[ size ] ;
+        
+            for( int numberOfelements = 0 ; numberOfelements < size - 1 ; numberOfelements++ )
+            {
+                this.storage[ numberOfelements ] = tmp_data[ numberOfelements ];
+            }
+        
+            this.storage[ size ] = data;
+        
+            delete[] tmp_data;
+        }
+        else{
+            this.storage[size] = data;
+        }
+    }
+    
+    void push(T *data , int lenth)
+    {
+        this.size += lenth;
+        if( size%50 == 0 )
+        {
+            
+            T* tmp_data = this.storage ;
+            this.storage = new T[ size ] ;
+            
+            for( int numberOfelements = 0 ; numberOfelements < size - 1 ; numberOfelements++ )
+            {
+                this.storage[ numberOfelements ] = tmp_data[ numberOfelements ];
+            }
+            
+            for(int numberOfelements = 0; numberOfelements < lenth ; numberOfelements++)
+            {
+                this.storage[ size - lenth + numberOfelements ] = data[ numberOfelements ];
+            }
+            
+            delete[] tmp_data;
+            
+        }
+        else
+        {
+            for(int numberOfelements = 0; numberOfelements < lenth ; numberOfelements++)
+            {
+                this.storage[ size - lenth + numberOfelements ] = data[ numberOfelements ];
+            }
         }
         
-        this.storage[ size ] = data;
-        
-        delete[] tmp_data;
+    }
+    
+    int getSize()
+    {
+        return this.size;
     }
     
     T pop()
     {
-        T pop_data = this.storage[size];
-        this.size--;
-        T* tmp_data = this.storage ;
-        this.storage = new T[ size ] ;
-        
-        for( int numberOfelements = 0 ; numberOfelements < size  ; numberOfelements++ )
+        if(size)
         {
-            this.storage[ numberOfelements ] = tmp_data[ numberOfelements ];
+            T pop_data = this.storage[size];
+            this.size--;
+            T* tmp_data = this.storage ;
+            this.storage = new T[ size ] ;
+        
+            for( int numberOfelements = 0 ; numberOfelements < size  ; numberOfelements++ )
+                {
+                    this.storage[ numberOfelements ] = tmp_data[ numberOfelements ];
+                }
+        
+            this.storage[ size ] = data;
+        
+            delete[] tmp_data;
+        
+            return pop_data;
         }
-        
-        this.storage[ size ] = data;
-        
-        delete[] tmp_data;
-        
-        return pop_data;
+        return null;
     }
     
     
